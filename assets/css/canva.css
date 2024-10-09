@@ -1,0 +1,559 @@
+
+/* StampMaker Interface */
+.work_area {
+  -ms-grid-column: 2;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  -ms-grid-row: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(9.5rem, 15rem) minmax(32rem, 1fr) minmax(11.5rem, 15rem);
+  grid-template-columns: minmax(9.5rem, 15rem) minmax(32rem, 1fr) minmax(11.5rem, 15rem);
+  -ms-grid-rows: minmax(0, 35rem);
+  grid-template-rows: minmax(0, 35rem);
+  gap: 0.5rem 1rem;
+  margin: auto;
+}
+
+/* Shadow with slight y-offset*/
+.canvas_tab,
+.side_card {
+  -webkit-box-shadow: 0 1rem 2rem 0 var(--shadow);
+  box-shadow: 0 1rem 2rem 0 var(--shadow);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem .5rem .2rem .5rem !important;
+  max-height: 35rem;
+}
+
+/* Side Cards - Properties and Layers */
+/* Layers/Properties Heading fixed to top on scroll */
+.side_card h5 {
+  padding: 0.5rem 0 0.5rem 0;
+  margin: 0 0.3rem 0.3rem 0.3rem;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  font-weight: 700;
+  text-align: center;
+  color: var(--black);
+  background-color: var(--white);
+  border-bottom: 0.15rem solid var(--black);
+}
+
+/* Layers Tab */
+.layers_tab {
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0.4rem;
+}
+
+#labels {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+/* Layer - Label */
+.label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  -webkit-box-shadow: 0 0 0.4rem 0 var(--shadow);
+  box-shadow: 0 0 0.4rem 0 var(--shadow);
+}
+
+.label > * {
+  padding: 0.2rem 0;
+}
+
+.label p {
+  margin: auto auto auto 0;
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.label p:hover,
+.label img:hover {
+  cursor: pointer;
+}
+
+.label > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-top: 0.05rem solid var(--primary);
+  width: 100%;
+}
+
+/* Label Action Buttons */
+.move-down-element {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.up_down_arrow img {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.closeBtn {
+  border: none;
+  background: transparent;
+}
+
+.closeBtn::before {
+  content: "Delete";
+  margin-right: 0.3rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Canvas Tab */
+.canvas_tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+/* Canvas container covers the remaining width/height */
+.canvas {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 2;
+  -ms-flex-positive: 2;
+  margin-top: clamp(0.1rem, 0.5rem, 5rem);
+  margin-bottom: clamp(0.1rem, 0.5rem, 5rem);
+  height: 100%;
+  width: 100%;
+}
+
+/* Canvas takes over the width/height */
+.canvas canvas {
+  margin: auto;
+}
+
+/* Toolbar stretched across width of Canvas Tab and aligned top */
+.toolbar {
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: .2rem 0 auto 0;
+  margin-top: clamp(0.5rem, 1rem, 3rem);
+  width: 100%;
+}
+
+/* Each Tool  */
+.toolbar .tool {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.3rem;
+  margin: 0 0.2rem;
+  font-size: 1rem;
+  border: 0.05rem solid var(--shadow);
+  border-radius: 0.7rem;
+  -webkit-box-shadow: 0 0.2rem 0.4rem 0 var(--shadow);
+  box-shadow: 0 0.2rem 0.4rem 0 var(--shadow);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  cursor: pointer;
+}
+
+.iconimg {
+  width: 3rem;
+  height: auto;
+}
+
+/* Mouseover Effects */
+.tool:hover {
+  -webkit-transform: scale(1.1) translateY(-10%);
+  transform: scale(1.1) translateY(-10%);
+  -webkit-box-shadow: 0 0.5rem 0.3rem 0 var(--shadow);
+  box-shadow: 0 0.5rem 0.3rem 0 var(--shadow);
+}
+
+/* Properties Tab */
+.property {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-rows: minmax(0, auto) [auto-fit];
+  grid-template-rows: repeat(auto-fit, minmax(0, auto));
+  overflow: hidden;
+}
+
+.property > div {
+  max-width: 100%;
+}
+
+.property h6 {
+  margin: 1rem 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--black);
+  -ms-grid-row: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+/* Individual Property */
+.property .text_design_shadow {
+  cursor: pointer;
+  margin: 0.3rem;
+  padding: 0.2rem 0.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 44%;
+  max-width: 10rem;
+  font-size: 1rem;
+  border: 0.1rem solid var(--black) !important;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: 0 0.3rem 1rem 0 var(--shadow);
+  box-shadow: 0 0.3rem 1rem 0 var(--shadow);
+}
+
+.circle_inputs {
+  height: 100%;
+}
+
+/* Font-Style Inputs */
+.input_block {
+  -ms-grid-row: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.input_block select {
+  max-width: 48%;
+  height: 2rem;
+}
+
+cle_inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-align: center;
+}
+
+/* Custom Text Input */
+.text {
+  margin: 1rem auto;
+  padding: 0.3rem 0.5rem;
+  display: block;
+  width: 80%;
+  font-size: 1.1rem;
+  border: 0.1rem solid var(--black) !important;
+  border-radius: 0.3rem;
+}
+
+.text:focus {
+  outline: none;
+}
+
+/* Bold/Italic Toggles */
+.bg-light {
+  padding: 0.1rem 0.3rem;
+}
+
+/* Colour Picker */
+.color_picker_container {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  padding: 0.3rem 0.5rem;
+  border: 0.05rem solid var(--black);
+  border-radius: 0.2rem;
+  max-width: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sp-replacer.sp-light {
+  padding: 0 .5rem;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  background: var(--white);
+  border: none;
+}
+
+.shape_color .sp-replacer.sp-light {
+  width: auto;
+}
+
+.sp-preview {
+  border: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
+  margin: auto;
+}
+
+/* Buttons */
+.sp-choose,
+.sp-cancel {
+  text-transform: capitalize;
+  background: var(--white) !important;
+  border: none;
+}
+
+.sp-cancel {
+  margin-right: 5rem !important;
+  border: none;
+}
+
+/* Image File Input */
+.file_input {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/* Custom Choose File Button */
+.file_input input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.file_input label {
+  display: block;
+  padding: 0.3rem 0.5rem;
+  content: " Open File ";
+  cursor: pointer;
+  outline: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 0.1rem solid var(--black);
+  border-radius: 0.2rem;
+}
+
+/* Click Effect */
+.file_input input:active ~ label {
+  background: var(--shadow);
+}
+
+/* Slider Inputs */
+.slidecontainer {
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  margin-top: clamp(0.1rem, 0.5rem, 5rem);
+  margin-bottom: clamp(0.1rem, 0.5rem, 5rem);
+  font-weight: 400;
+  color: var(--black);
+  margin-top: .3rem;
+  margin-top: clamp(0.3rem, 1rem, 2rem) !important;
+}
+
+.slidecontainer span:nth-child(1) {
+  font-weight: 600;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  cursor: pointer;
+  height: 0.15rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-top: .5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 0.9rem;
+  width: 0.9rem;
+  border-radius: 50%;
+  background: var(--secondary);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -0.35rem;
+}
+
+.slidecontainer {
+  display: -ms-grid !important;
+  display: grid !important;
+  -ms-grid-columns: auto auto;
+  grid-template-columns: auto auto;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.slidecontainer > span:nth-child(1) {
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  -ms-grid-row: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  text-align: right;
+}
+
+.slidecontainer > span:nth-child(2) {
+  -ms-grid-column: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  -ms-grid-row: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  text-align: left;
+  text-indent: .5rem;
+}
+
+.slidecontainer > input {
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  -ms-grid-row: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+

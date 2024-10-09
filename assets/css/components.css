@@ -1,0 +1,217 @@
+/* Banners */
+.banner {
+  padding: 0 1rem !important;
+}
+
+.banner img {
+  -webkit-box-shadow: 0 0 2rem 0 var(--shadow);
+  box-shadow: 0 0 2rem 0 var(--shadow);
+}
+
+.banner_side {
+  -ms-grid-row: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding: 0.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.banner_side img {
+  max-width: 100% !important;
+  width: auto !important;
+  height: 100% !important;
+  max-height: 35rem !important;
+}
+
+.banner_side.left {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.banner_side.right {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-grid-column: 4;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.banner_bottom {
+  -ms-grid-row: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 !important;
+}
+
+.banner_bottom img {
+  max-width: 32rem;
+  min-height: 4rem;
+}
+
+.banner_bottom.left {
+  -ms-grid-column: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-start;
+}
+
+.banner_bottom.right {
+  -ms-grid-column: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-end;
+}
+
+/* Bottom Buttons */
+.bottom_btns {
+  -ms-grid-row: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  -ms-grid-column: 1;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+/* Open Button */
+.bottom_btns #toggle {
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--primary);
+  -webkit-box-shadow: 0 0 1.5rem 0 var(--shadow);
+  box-shadow: 0 0 1.5rem 0 var(--shadow);
+}
+
+/* Close Button */
+.insclose {
+  cursor: pointer;
+}
+
+/* Hidden Section */
+.suggest {
+  z-index: 2;
+}
+
+.bottom_btns .suggest {
+  position: absolute;
+  bottom: 0;
+  max-width: 100vw;
+  max-height: 100vh;
+  background-color: var(--white);
+  border: 0.1rem solid var(--primary);
+}
+
+/* Heading */
+.bottom_btns .suggest > div {
+  padding: 0.5rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.bottom_btns .suggest h5 {
+  font-size: 1.5rem;
+  margin: auto 0;
+}
+
+/* Instructions Text Content*/
+.instructions_section p {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+
+/* Suggestions */
+/* Hidden Section */
+.suggestion_section .suggest {
+  width: 20rem;
+  right: 0;
+}
+
+/* Form */
+.suggestion_section form {
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.suggestion_section textarea {
+  min-height: 10ch;
+  min-width: 10ch;
+  max-height: 50vh;
+}
+
+.suggestion_section form button {
+  margin: 1rem 0 0 0;
+  color: var(--secondary);
+}
+
+.shape_color {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 auto !important;
+}
+
+
+.modal {
+  top: 0% !important;
+  overflow: hidden !important;
+}

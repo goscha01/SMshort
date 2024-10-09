@@ -1,0 +1,82 @@
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark);
+}
+
+/* Default Buttons/Links Class */
+.button,
+.nav_container a {
+  padding: 0.2rem 0.7rem;
+  font-size: 1.15rem;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 2rem;
+  font-weight: 500;
+  border: 0.15rem solid var(--secondary);
+  border-radius: 0.3rem;
+  color: var(--white);
+  background-color: transparent;
+  -webkit-transition: background-color 300ms, color 700ms;
+  transition: background-color 300ms, color 700ms;
+}
+
+/* Uniform Size across all Buttons */
+.header .button {
+  min-width: 6rem;
+}
+
+.about_btn {
+  color: var(--secondary);
+}
+
+#downloads {
+  padding: 0.5rem 1rem;
+  margin: auto 0 0.5rem 0;
+  margin-bottom: clamp(0.5rem, 1rem, 3rem);
+}
+
+.sign_up,
+#downloads,
+.about_btn:focus,
+.button:hover {
+  color: var(--white) !important;
+  background-color: var(--secondary);
+  -webkit-transition: border-color 600ms, background-color 200ms, color 400ms;
+  transition: border-color 600ms, background-color 200ms, color 400ms;
+}
+
+.nav_container > .button {
+  border: 0.1rem solid var(--white);
+}
+
+/* State-Based Effects */
+.nav_container > .button:hover {
+  border-color: var(--dark);
+}
+
+.nav_container > .button:active {
+  background-color: var(--dark);
+  color: var(--white) !important;
+}
+
+/* Hide Mobile Layers / Properties Toggle */
+.mobile {
+  display: none;
+}
